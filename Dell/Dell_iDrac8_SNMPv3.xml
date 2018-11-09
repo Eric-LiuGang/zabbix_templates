@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>Template_Dell_iDrac8_SNMPv3</template>
-            <name>Template_Dell_iDrac8_SNMPv3</name>
+            <template>Dell_iDrac8_SNMPv3</template>
+            <name>Dell_iDrac8_SNMPv3</name>
             <description/>
             <groups>
                 <group>
@@ -1391,7 +1391,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:DiskStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:DiskStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Problem with Disk {#SNMPINDEX}</name>
@@ -1532,7 +1532,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:FanStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:FanStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Problem with FAN {#SNMPVALUE}</name>
@@ -1575,7 +1575,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template_Dell_iDrac8_SNMPv3</host>
+                                        <host>Dell_iDrac8_SNMPv3</host>
                                         <key>FanSpeed.[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -1879,7 +1879,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:MemStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:MemStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Problem with memory in slot {#SNMPVALUE}</name>
@@ -2148,7 +2148,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:NetConnStatus.[{#SNMPINDEX}].diff(0)}=1</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:NetConnStatus.[{#SNMPINDEX}].diff(0)}=1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Connection Status has changed on NIC {#SNMPINDEX}</name>
@@ -2164,7 +2164,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:NetStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:NetStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Error on NIC {#SNMPINDEX}</name>
@@ -2440,7 +2440,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:PowerSupplySensorState.[{#SNMPINDEX}].last(0)}&lt;&gt;1</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:PowerSupplySensorState.[{#SNMPINDEX}].last(0)}&lt;&gt;1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Error on PSU {#SNMPINDEX} State</name>
@@ -2456,7 +2456,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:PowerSupplyStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:PowerSupplyStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Problem with PSU {#SNMPINDEX}</name>
@@ -2555,7 +2555,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>({Template_Dell_iDrac8_SNMPv3:ProcStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3 and {Template_Dell_iDrac8_SNMPv3:ProcStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;2) or ({Template_Dell_iDrac8_SNMPv3:ProcStatus.[{#SNMPINDEX}].last(86400)}&lt;&gt;2 and {Template_Dell_iDrac8_SNMPv3:ProcStatus.[{#SNMPINDEX}].last(0)}=2)</expression>
+                            <expression>({Dell_iDrac8_SNMPv3:ProcStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3 and {Dell_iDrac8_SNMPv3:ProcStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;2) or ({Dell_iDrac8_SNMPv3:ProcStatus.[{#SNMPINDEX}].last(86400)}&lt;&gt;2 and {Dell_iDrac8_SNMPv3:ProcStatus.[{#SNMPINDEX}].last(0)}=2)</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Error on Processor {#SNMPINDEX}</name>
@@ -2891,7 +2891,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:TempStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:TempStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Problem with Temperature Sensor {#SNMPVALUE}</name>
@@ -2907,7 +2907,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:TempValue.[{#SNMPINDEX}].last()} &gt;= {Template_Dell_iDrac8_SNMPv3:TempCritUpLimit.[{#SNMPINDEX}].last()}</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:TempValue.[{#SNMPINDEX}].last()} &gt;= {Dell_iDrac8_SNMPv3:TempCritUpLimit.[{#SNMPINDEX}].last()}</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Temperature on {#SNMPVALUE} critically high</name>
@@ -2923,7 +2923,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:TempValue.[{#SNMPINDEX}].last()} &lt;= {Template_Dell_iDrac8_SNMPv3:TempCritLowLimit.[{#SNMPINDEX}].last()}</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:TempValue.[{#SNMPINDEX}].last()} &lt;= {Dell_iDrac8_SNMPv3:TempCritLowLimit.[{#SNMPINDEX}].last()}</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Temperature on {#SNMPVALUE} critically low</name>
@@ -2939,11 +2939,11 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:TempValue.[{#SNMPINDEX}].last()} &gt; {Template_Dell_iDrac8_SNMPv3:TempWarnUpLimit.[{#SNMPINDEX}].last()}&#13;
+                            <expression>{Dell_iDrac8_SNMPv3:TempValue.[{#SNMPINDEX}].last()} &gt; {Dell_iDrac8_SNMPv3:TempWarnUpLimit.[{#SNMPINDEX}].last()}&#13;
 &#13;
 and&#13;
 &#13;
-{Template_Dell_iDrac8_SNMPv3:TempValue.[{#SNMPINDEX}].last()} &lt; {Template_Dell_iDrac8_SNMPv3:TempCritUpLimit.[{#SNMPINDEX}].last()}</expression>
+{Dell_iDrac8_SNMPv3:TempValue.[{#SNMPINDEX}].last()} &lt; {Dell_iDrac8_SNMPv3:TempCritUpLimit.[{#SNMPINDEX}].last()}</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Temperature on {#SNMPVALUE} to high</name>
@@ -2959,11 +2959,11 @@ and&#13;
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:TempValue.[{#SNMPINDEX}].last()} &lt; {Template_Dell_iDrac8_SNMPv3:TempWarnLowLimit.[{#SNMPINDEX}].last()}&#13;
+                            <expression>{Dell_iDrac8_SNMPv3:TempValue.[{#SNMPINDEX}].last()} &lt; {Dell_iDrac8_SNMPv3:TempWarnLowLimit.[{#SNMPINDEX}].last()}&#13;
 &#13;
 and&#13;
 &#13;
-{Template_Dell_iDrac8_SNMPv3:TempValue.[{#SNMPINDEX}].last()} &gt; {Template_Dell_iDrac8_SNMPv3:TempCritLowLimit.[{#SNMPINDEX}].last()}</expression>
+{Dell_iDrac8_SNMPv3:TempValue.[{#SNMPINDEX}].last()} &gt; {Dell_iDrac8_SNMPv3:TempCritLowLimit.[{#SNMPINDEX}].last()}</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Temperature on {#SNMPVALUE} to low</name>
@@ -3006,7 +3006,7 @@ and&#13;
                                     <calc_fnc>7</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template_Dell_iDrac8_SNMPv3</host>
+                                        <host>Dell_iDrac8_SNMPv3</host>
                                         <key>TempValue.[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -3095,7 +3095,7 @@ and&#13;
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:VoltageStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:VoltageStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Error on Voltage Sensor {#SNMPVALUE}</name>
@@ -3111,7 +3111,7 @@ and&#13;
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:VoltageStatus.[{#SNMPINDEX}].last(0)}&gt;3</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:VoltageStatus.[{#SNMPINDEX}].last(0)}&gt;3</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>_Error on Voltage Sensor {#SNMPVALUE}</name>
@@ -3387,7 +3387,7 @@ and&#13;
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:VolumeDiskState.[{#SNMPINDEX}].last(0)}&lt;&gt;2</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:VolumeDiskState.[{#SNMPINDEX}].last(0)}&lt;&gt;2</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Volume {#SNMPINDEX} Error</name>
@@ -3403,7 +3403,7 @@ and&#13;
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template_Dell_iDrac8_SNMPv3:VolumeStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
+                            <expression>{Dell_iDrac8_SNMPv3:VolumeStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;3</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Volume {#SNMPINDEX} Status Error</name>
@@ -3432,7 +3432,7 @@ and&#13;
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template_Dell_iDrac8_SNMPv3:GlobalSystemStatus.nodata(300)}</expression>
+            <expression>{Dell_iDrac8_SNMPv3:GlobalSystemStatus.nodata(300)}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>No iDrac data for &gt; 5 minutes</name>
@@ -3448,7 +3448,7 @@ and&#13;
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template_Dell_iDrac8_SNMPv3:GlobalSystemRollupStatus.last(0)}&lt;&gt;3</expression>
+            <expression>{Dell_iDrac8_SNMPv3:GlobalSystemRollupStatus.last(0)}&lt;&gt;3</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Overall System Rollup Status Error</name>
@@ -3464,7 +3464,7 @@ and&#13;
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template_Dell_iDrac8_SNMPv3:GlobalSystemRollupStatus.last(0)}&gt;4</expression>
+            <expression>{Dell_iDrac8_SNMPv3:GlobalSystemRollupStatus.last(0)}&gt;4</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Overall System Rollup Status Error</name>
@@ -3480,7 +3480,7 @@ and&#13;
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template_Dell_iDrac8_SNMPv3:GlobalSystemStatus.last()}&lt;&gt;3</expression>
+            <expression>{Dell_iDrac8_SNMPv3:GlobalSystemStatus.last()}&lt;&gt;3</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Overall System Status Error</name>
@@ -3496,7 +3496,7 @@ and&#13;
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template_Dell_iDrac8_SNMPv3:GlobalSystemStatus.last()}&gt;4</expression>
+            <expression>{Dell_iDrac8_SNMPv3:GlobalSystemStatus.last()}&gt;4</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Overall System Status Error</name>
@@ -3512,7 +3512,7 @@ and&#13;
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template_Dell_iDrac8_SNMPv3:CMOSBatteryStatus.last(0)}&lt;&gt;3</expression>
+            <expression>{Dell_iDrac8_SNMPv3:CMOSBatteryStatus.last(0)}&lt;&gt;3</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Problem with CMOS Battery</name>
@@ -3528,7 +3528,7 @@ and&#13;
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template_Dell_iDrac8_SNMPv3:RAIDControllerStatus.last(0)}&lt;&gt;3</expression>
+            <expression>{Dell_iDrac8_SNMPv3:RAIDControllerStatus.last(0)}&lt;&gt;3</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>RAID Controller Error</name>
@@ -3544,7 +3544,7 @@ and&#13;
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template_Dell_iDrac8_SNMPv3:GlobalSystemStorageStatus.last(0)}&lt;&gt;3</expression>
+            <expression>{Dell_iDrac8_SNMPv3:GlobalSystemStorageStatus.last(0)}&lt;&gt;3</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Storage System Status Error</name>
@@ -3560,7 +3560,7 @@ and&#13;
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template_Dell_iDrac8_SNMPv3:GlobalSystemStorageStatus.last(0)}&gt;4</expression>
+            <expression>{Dell_iDrac8_SNMPv3:GlobalSystemStorageStatus.last(0)}&gt;4</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Storage System Status Error</name>
@@ -3576,7 +3576,7 @@ and&#13;
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template_Dell_iDrac8_SNMPv3:GlobalSystemPowerState.last(0)}&lt;&gt;4 and {Template_Dell_iDrac8_SNMPv3:GlobalSystemPowerState.last(0)}&lt;&gt;0</expression>
+            <expression>{Dell_iDrac8_SNMPv3:GlobalSystemPowerState.last(0)}&lt;&gt;4 and {Dell_iDrac8_SNMPv3:GlobalSystemPowerState.last(0)}&lt;&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>System is not online</name>
@@ -3592,7 +3592,7 @@ and&#13;
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template_Dell_iDrac8_SNMPv3:VoltageStatusCombined.last(0)}&lt;&gt;3</expression>
+            <expression>{Dell_iDrac8_SNMPv3:VoltageStatusCombined.last(0)}&lt;&gt;3</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Voltage Status Error</name>
