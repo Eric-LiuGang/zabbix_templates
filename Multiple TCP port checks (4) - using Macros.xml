@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>3.4</version>
+    <date>2018-11-09T17:57:29Z</date>
+    <groups>
+        <group>
+            <name>CMDB</name>
+        </group>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Multiple TCP port checks 4 - using Macros</template>
+            <name>Multiple TCP port checks (4) - using Macros</name>
+            <description>Following macros should be defined:&#13;
+- PORTNUM1&#13;
+- PORTNUM2&#13;
+- PORTNUM3&#13;
+- PORTNUM4&#13;
+- USAGE1&#13;
+- USAGE2&#13;
+- USAGE3&#13;
+- USAGE4</description>
+            <groups>
+                <group>
+                    <name>CMDB</name>
+                </group>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Port check</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>TCP check on port {$PORTNUM1} ({$USAGE1})</name>
+                    <type>3</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>net.tcp.service[tcp,,{$PORTNUM1}]</key>
+                    <delay>120</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Port check</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>TCP check on port {$PORTNUM2} ({$USAGE2})</name>
+                    <type>3</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>net.tcp.service[tcp,,{$PORTNUM2}]</key>
+                    <delay>120</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Port check</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>TCP check on port {$PORTNUM3} ({$USAGE3})</name>
+                    <type>3</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>net.tcp.service[tcp,,{$PORTNUM3}]</key>
+                    <delay>120</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Port check</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>TCP check on port {$PORTNUM4} ({$USAGE4})</name>
+                    <type>3</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>net.tcp.service[tcp,,{$PORTNUM4}]</key>
+                    <delay>120</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Port check</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+            </items>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{Multiple TCP port checks 4 - using Macros:net.tcp.service[tcp,,{$PORTNUM1}].max(#3)}=0</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{Multiple TCP port checks 4 - using Macros:net.tcp.service[tcp,,{$PORTNUM1}].last()}=1</recovery_expression>
+            <name>Connectivity is blocked or unreachable on port {$PORTNUM1} (TCP)</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Multiple TCP port checks 4 - using Macros:net.tcp.service[tcp,,{$PORTNUM2}].max(#3)}=0</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{Multiple TCP port checks 4 - using Macros:net.tcp.service[tcp,,{$PORTNUM2}].last()}=1</recovery_expression>
+            <name>Connectivity is blocked or unreachable on port {$PORTNUM2} (TCP)</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Multiple TCP port checks 4 - using Macros:net.tcp.service[tcp,,{$PORTNUM3}].max(#3)}=0</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{Multiple TCP port checks 4 - using Macros:net.tcp.service[tcp,,{$PORTNUM3}].last()}=1</recovery_expression>
+            <name>Connectivity is blocked or unreachable on port {$PORTNUM3} (TCP)</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Multiple TCP port checks 4 - using Macros:net.tcp.service[tcp,,{$PORTNUM4}].max(#3)}=0</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{Multiple TCP port checks 4 - using Macros:net.tcp.service[tcp,,{$PORTNUM4}].last()}=1</recovery_expression>
+            <name>Connectivity is blocked or unreachable on port {$PORTNUM4} (TCP)</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+    </triggers>
+    <value_maps>
+        <value_map>
+            <name>Service state</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>Down</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>Up</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
