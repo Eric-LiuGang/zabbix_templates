@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-11-09T17:54:43Z</date>
+    <date>2018-11-10T13:10:41Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -542,7 +542,7 @@
                             <snmp_community/>
                             <snmp_oid/>
                             <key>fs.percent.used[{#SNMPVALUE}]</key>
-                            <delay>300</delay>
+                            <delay>30</delay>
                             <history>90d</history>
                             <trends>365d</trends>
                             <status>0</status>
@@ -639,26 +639,26 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:fs.percent.used[{#SNMPVALUE}].min(#3)}&gt;=70</expression>
+                            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:fs.percent.used[{#SNMPVALUE}].last()}&gt;={$AVG} and {QNAP_NAS_SNMPv3_authPriv_DES:fs.percent.used[{#SNMPVALUE}].last()}&lt;{$HIGH}</expression>
                             <recovery_mode>1</recovery_mode>
-                            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:fs.percent.used[{#SNMPVALUE}].last()}&lt;70</recovery_expression>
-                            <name>FS usage on [{#SNMPVALUE}] is above 75%</name>
+                            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:fs.percent.used[{#SNMPVALUE}].last()}&lt;{$AVG}</recovery_expression>
+                            <name>{HOST.NAME}: FS usage on [{#SNMPVALUE}] is {ITEM.LASTVALUE1}</name>
                             <correlation_mode>0</correlation_mode>
                             <correlation_tag/>
                             <url/>
                             <status>0</status>
-                            <priority>2</priority>
+                            <priority>3</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>0</manual_close>
+                            <manual_close>1</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:fs.percent.used[{#SNMPVALUE}].min(#3)}&gt;=85</expression>
+                            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:fs.percent.used[{#SNMPVALUE}].last()}&gt;={$HIGH}</expression>
                             <recovery_mode>1</recovery_mode>
-                            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:fs.percent.used[{#SNMPVALUE}].last()}&lt;85</recovery_expression>
-                            <name>FS usage on [{#SNMPVALUE}] is above 90%</name>
+                            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:fs.percent.used[{#SNMPVALUE}].last()}&lt;{$HIGH}</recovery_expression>
+                            <name>{HOST.NAME}: FS usage on [{#SNMPVALUE}] is {ITEM.LASTVALUE1}</name>
                             <correlation_mode>0</correlation_mode>
                             <correlation_tag/>
                             <url/>
@@ -666,7 +666,23 @@
                             <priority>4</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>0</manual_close>
+                            <manual_close>1</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:fs.percent.used[{#SNMPVALUE}].last()}&gt;={$WARN} and {QNAP_NAS_SNMPv3_authPriv_DES:fs.percent.used[{#SNMPVALUE}].last()}&lt;{$AVG}</expression>
+                            <recovery_mode>1</recovery_mode>
+                            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:fs.percent.used[{#SNMPVALUE}].last()}&lt;{$WARN}</recovery_expression>
+                            <name>{HOST.NAME}: FS usage on [{#SNMPVALUE}] is {ITEM.LASTVALUE1}</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>2</priority>
+                            <description/>
+                            <type>0</type>
+                            <manual_close>1</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
@@ -1242,7 +1258,20 @@
                 </discovery_rule>
             </discovery_rules>
             <httptests/>
-            <macros/>
+            <macros>
+                <macro>
+                    <macro>{$AVG}</macro>
+                    <value>90</value>
+                </macro>
+                <macro>
+                    <macro>{$HIGH}</macro>
+                    <value>95</value>
+                </macro>
+                <macro>
+                    <macro>{$WARN}</macro>
+                    <value>85</value>
+                </macro>
+            </macros>
             <templates/>
             <screens/>
         </template>
