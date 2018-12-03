@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-11-10T13:10:41Z</date>
+    <date>2018-12-03T12:02:57Z</date>
     <groups>
+        <group>
+            <name>CMDB</name>
+        </group>
         <group>
             <name>Templates</name>
         </group>
@@ -13,6 +16,9 @@
             <name>QNAP_NAS_SNMPv3_authPriv_DES</name>
             <description/>
             <groups>
+                <group>
+                    <name>CMDB</name>
+                </group>
                 <group>
                     <name>Templates</name>
                 </group>
@@ -26,6 +32,9 @@
                 </application>
                 <application>
                     <name>General</name>
+                </application>
+                <application>
+                    <name>HDD</name>
                 </application>
                 <application>
                     <name>Memory</name>
@@ -241,6 +250,56 @@
                     <master_item/>
                 </item>
                 <item>
+                    <name>Memory [Free]</name>
+                    <type>6</type>
+                    <snmp_community/>
+                    <snmp_oid>1.3.6.1.4.1.24681.1.2.3.0</snmp_oid>
+                    <key>SystemFreeMem</key>
+                    <delay>240</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname>{$SNMP_USERNAME}</snmpv3_securityname>
+                    <snmpv3_securitylevel>2</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>1</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase>{$SNMP_AUTHPASS}</snmpv3_authpassphrase>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase>{$SNMP_PRIVPASS}</snmpv3_privpassphrase>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port>{$SNMP_PORTNUM}</port>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Memory</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>2</type>
+                            <params> MB</params>
+                        </step>
+                        <step>
+                            <type>1</type>
+                            <params>1048576</params>
+                        </step>
+                    </preprocessing>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
                     <name>Number of running processes</name>
                     <type>6</type>
                     <snmp_community/>
@@ -278,6 +337,103 @@
                     <valuemap/>
                     <logtimefmt/>
                     <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>System Temperature (Celsius)</name>
+                    <type>6</type>
+                    <snmp_community/>
+                    <snmp_oid>1.3.6.1.4.1.24681.1.2.6.0</snmp_oid>
+                    <key>SystemTemperature</key>
+                    <delay>180</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>C</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname>{$SNMP_USERNAME}</snmpv3_securityname>
+                    <snmpv3_securitylevel>2</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>1</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase>{$SNMP_AUTHPASS}</snmpv3_authpassphrase>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase>{$SNMP_PRIVPASS}</snmpv3_privpassphrase>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port>{$SNMP_PORTNUM}</port>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>General</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>5</type>
+                            <params>^..
+\0</params>
+                        </step>
+                    </preprocessing>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>Memory [Total]</name>
+                    <type>6</type>
+                    <snmp_community/>
+                    <snmp_oid>1.3.6.1.4.1.24681.1.2.2.0</snmp_oid>
+                    <key>SystemTotalMem</key>
+                    <delay>240</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname>{$SNMP_USERNAME}</snmpv3_securityname>
+                    <snmpv3_securitylevel>2</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>1</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase>{$SNMP_AUTHPASS}</snmpv3_authpassphrase>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase>{$SNMP_PRIVPASS}</snmpv3_privpassphrase>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port>{$SNMP_PORTNUM}</port>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Memory</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>2</type>
+                            <params> MB</params>
+                        </step>
+                        <step>
+                            <type>1</type>
+                            <params>1048576</params>
+                        </step>
+                    </preprocessing>
                     <jmx_endpoint/>
                     <master_item/>
                 </item>
@@ -327,8 +483,323 @@
                     <jmx_endpoint/>
                     <master_item/>
                 </item>
+                <item>
+                    <name>System Uptime v2</name>
+                    <type>6</type>
+                    <snmp_community/>
+                    <snmp_oid>1.3.6.1.4.1.24681.1.2.4.0</snmp_oid>
+                    <key>SystemUptime2</key>
+                    <delay>60</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>1</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>uptime</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname>{$SNMP_USERNAME}</snmpv3_securityname>
+                    <snmpv3_securitylevel>2</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>1</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase>{$SNMP_AUTHPASS}</snmpv3_authpassphrase>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase>{$SNMP_PRIVPASS}</snmpv3_privpassphrase>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port>{$SNMP_PORTNUM}</port>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>General</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>1</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>Memory [Usage]</name>
+                    <type>15</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>SystemUsageMem</key>
+                    <delay>240</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>%</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params>(last(&quot;SystemUsedMem&quot;,0)/last(&quot;SystemTotalMem&quot;,0))*100</params>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Memory</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>Memory [Used]</name>
+                    <type>15</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>SystemUsedMem</key>
+                    <delay>240</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params>last(&quot;SystemTotalMem&quot;,0)-last(&quot;SystemFreeMem&quot;,0)</params>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Memory</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
             </items>
             <discovery_rules>
+                <discovery_rule>
+                    <name>Discovery: Hard Drives</name>
+                    <type>6</type>
+                    <snmp_community/>
+                    <snmp_oid>discovery[{#SNMPVALUE}, SNMPv2-SMI::enterprises.24681.1.2.11.1.1]</snmp_oid>
+                    <key>discovery.nas.hdd</key>
+                    <delay>3600</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname>{$SNMP_USERNAME}</snmpv3_securityname>
+                    <snmpv3_securitylevel>2</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>1</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase>{$SNMP_AUTHPASS}</snmpv3_authpassphrase>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase>{$SNMP_PRIVPASS}</snmpv3_privpassphrase>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port>{$SNMP_PORTNUM}</port>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
+                    <lifetime>30d</lifetime>
+                    <description/>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Health of [HDD{#SNMPVALUE}]</name>
+                            <type>6</type>
+                            <snmp_community/>
+                            <snmp_oid>SNMPv2-SMI::enterprises.24681.1.2.11.1.7.{#SNMPINDEX}</snmp_oid>
+                            <key>disk.health[{#SNMPVALUE}]</key>
+                            <delay>300</delay>
+                            <history>90d</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname>{$SNMP_USERNAME}</snmpv3_securityname>
+                            <snmpv3_securitylevel>2</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>1</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$SNMP_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$SNMP_PRIVPASS}</snmpv3_privpassphrase>
+                            <params/>
+                            <ipmi_sensor/>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port>{$SNMP_PORTNUM}</port>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HDD</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
+                            <application_prototypes/>
+                            <master_item_prototype/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Temperature of [HDD{#SNMPVALUE}]</name>
+                            <type>6</type>
+                            <snmp_community/>
+                            <snmp_oid>SNMPv2-SMI::enterprises.24681.1.2.11.1.3.{#SNMPINDEX}</snmp_oid>
+                            <key>disk.temperature[{#SNMPVALUE}]</key>
+                            <delay>600</delay>
+                            <history>90d</history>
+                            <trends>365d</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>C</units>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname>{$SNMP_USERNAME}</snmpv3_securityname>
+                            <snmpv3_securitylevel>2</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>1</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$SNMP_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$SNMP_PRIVPASS}</snmpv3_privpassphrase>
+                            <params/>
+                            <ipmi_sensor/>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port>{$SNMP_PORTNUM}</port>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HDD</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <preprocessing>
+                                <step>
+                                    <type>5</type>
+                                    <params>^..
+\0</params>
+                                </step>
+                            </preprocessing>
+                            <jmx_endpoint/>
+                            <application_prototypes/>
+                            <master_item_prototype/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Disk Type [HDD{#SNMPVALUE}]</name>
+                            <type>6</type>
+                            <snmp_community/>
+                            <snmp_oid>SNMPv2-SMI::enterprises.24681.1.2.11.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>disk.type[{#SNMPVALUE}]</key>
+                            <delay>3000</delay>
+                            <history>90d</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname>{$SNMP_USERNAME}</snmpv3_securityname>
+                            <snmpv3_securitylevel>2</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>1</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$SNMP_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$SNMP_PRIVPASS}</snmpv3_privpassphrase>
+                            <params/>
+                            <ipmi_sensor/>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port>{$SNMP_PORTNUM}</port>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HDD</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
+                            <application_prototypes/>
+                            <master_item_prototype/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:disk.health[{#SNMPVALUE}].iregexp(--)}=0 and {QNAP_NAS_SNMPv3_authPriv_DES:disk.health[{#SNMPVALUE}].iregexp(good)}=0</expression>
+                            <recovery_mode>1</recovery_mode>
+                            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:disk.health[{#SNMPVALUE}].iregexp(--)}=1 or {QNAP_NAS_SNMPv3_authPriv_DES:disk.health[{#SNMPVALUE}].iregexp(good)}=1</recovery_expression>
+                            <name>{HOST.NAME}: Health of HDD{#SNMPVALUE}</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url>http://192.168.2.242:8080/cgi-bin/</url>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>0</type>
+                            <manual_close>1</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                    <jmx_endpoint/>
+                </discovery_rule>
                 <discovery_rule>
                     <name>Discovery: Local file system</name>
                     <type>6</type>
@@ -692,219 +1163,6 @@
                     <jmx_endpoint/>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Discovery: Memory</name>
-                    <type>6</type>
-                    <snmp_community/>
-                    <snmp_oid>discovery[{#SNMPVALUE}, 1.3.6.1.2.1.25.2.3.1.3]</snmp_oid>
-                    <key>hrStorageDescr.memory</key>
-                    <delay>3600</delay>
-                    <status>1</status>
-                    <allowed_hosts/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname>{$SNMP_USERNAME}</snmpv3_securityname>
-                    <snmpv3_securitylevel>2</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>1</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase>{$SNMP_AUTHPASS}</snmpv3_authpassphrase>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase>{$SNMP_PRIVPASS}</snmpv3_privpassphrase>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port>{$SNMP_PORTNUM}</port>
-                    <filter>
-                        <evaltype>0</evaltype>
-                        <formula/>
-                        <conditions>
-                            <condition>
-                                <macro>{#SNMPVALUE}</macro>
-                                <value>memory</value>
-                                <operator>8</operator>
-                                <formulaid>A</formulaid>
-                            </condition>
-                        </conditions>
-                    </filter>
-                    <lifetime>30d</lifetime>
-                    <description/>
-                    <item_prototypes>
-                        <item_prototype>
-                            <name>Allocation units of [{#SNMPVALUE}]</name>
-                            <type>6</type>
-                            <snmp_community/>
-                            <snmp_oid>HOST-RESOURCES-MIB::hrStorageAllocationUnits.{#SNMPINDEX}</snmp_oid>
-                            <key>mem.allocation.units[{#SNMPVALUE}]</key>
-                            <delay>60</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname>{$SNMP_USERNAME}</snmpv3_securityname>
-                            <snmpv3_securitylevel>2</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>1</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase>{$SNMP_AUTHPASS}</snmpv3_authpassphrase>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase>{$SNMP_PRIVPASS}</snmpv3_privpassphrase>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port>{$SNMP_PORTNUM}</port>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Memory</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
-                            <application_prototypes/>
-                            <master_item_prototype/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Total block count of [{#SNMPVALUE}]</name>
-                            <type>6</type>
-                            <snmp_community/>
-                            <snmp_oid>HOST-RESOURCES-MIB::hrStorageSize.{#SNMPINDEX}</snmp_oid>
-                            <key>mem.block.total[{#SNMPVALUE}]</key>
-                            <delay>60</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname>{$SNMP_USERNAME}</snmpv3_securityname>
-                            <snmpv3_securitylevel>2</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>1</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase>{$SNMP_AUTHPASS}</snmpv3_authpassphrase>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase>{$SNMP_PRIVPASS}</snmpv3_privpassphrase>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port>{$SNMP_PORTNUM}</port>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Memory</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
-                            <application_prototypes/>
-                            <master_item_prototype/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Used block count of [{#SNMPVALUE}]</name>
-                            <type>6</type>
-                            <snmp_community/>
-                            <snmp_oid>HOST-RESOURCES-MIB::hrStorageUsed.{#SNMPINDEX}</snmp_oid>
-                            <key>mem.block.used[{#SNMPVALUE}]</key>
-                            <delay>60</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname>{$SNMP_USERNAME}</snmpv3_securityname>
-                            <snmpv3_securitylevel>2</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>1</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase>{$SNMP_AUTHPASS}</snmpv3_authpassphrase>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase>{$SNMP_PRIVPASS}</snmpv3_privpassphrase>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port>{$SNMP_PORTNUM}</port>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Memory</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
-                            <application_prototypes/>
-                            <master_item_prototype/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Usage of [{#SNMPVALUE}]</name>
-                            <type>15</type>
-                            <snmp_community/>
-                            <snmp_oid/>
-                            <key>mem.percent.used[{#SNMPVALUE}]</key>
-                            <delay>60</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units>%</units>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params>(last(&quot;mem.block.used[{#SNMPVALUE}]&quot;,0)/last(&quot;mem.block.total[{#SNMPVALUE}]&quot;,0))*100</params>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Memory</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
-                            <application_prototypes/>
-                            <master_item_prototype/>
-                        </item_prototype>
-                    </item_prototypes>
-                    <trigger_prototypes/>
-                    <graph_prototypes/>
-                    <host_prototypes/>
-                    <jmx_endpoint/>
-                </discovery_rule>
-                <discovery_rule>
                     <name>Discovery:  Network interfaces</name>
                     <type>6</type>
                     <snmp_community/>
@@ -1204,26 +1462,10 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].min(#3)}&gt;=70</expression>
+                            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].min(#3)}&gt;={$AVG} and {QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].min(#3)}&lt;{$HIGH}</expression>
                             <recovery_mode>1</recovery_mode>
-                            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].last()}&lt;70</recovery_expression>
-                            <name>CPU{#SNMPINDEX} load is above 70%</name>
-                            <correlation_mode>0</correlation_mode>
-                            <correlation_tag/>
-                            <url/>
-                            <status>0</status>
-                            <priority>2</priority>
-                            <description/>
-                            <type>0</type>
-                            <manual_close>0</manual_close>
-                            <dependencies/>
-                            <tags/>
-                        </trigger_prototype>
-                        <trigger_prototype>
-                            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].min(#3)}&gt;=90</expression>
-                            <recovery_mode>1</recovery_mode>
-                            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].last()}&lt;90</recovery_expression>
-                            <name>CPU{#SNMPINDEX} load is above 90%</name>
+                            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].last()}&lt;{$AVG}</recovery_expression>
+                            <name>CPU{#SNMPINDEX} load is {ITEM.LASTVALUE1}</name>
                             <correlation_mode>0</correlation_mode>
                             <correlation_tag/>
                             <url/>
@@ -1231,15 +1473,31 @@
                             <priority>3</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>0</manual_close>
+                            <manual_close>1</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].min(#5)}&gt;=95</expression>
+                            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].min(#3)}&gt;={$WARN} and {QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].min(#3)}&lt;{$AVG}</expression>
                             <recovery_mode>1</recovery_mode>
-                            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].last()}&lt;95</recovery_expression>
-                            <name>CPU{#SNMPINDEX} load is above 95%</name>
+                            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].last()}&lt;{$WARN}</recovery_expression>
+                            <name>CPU{#SNMPINDEX} load is {ITEM.LASTVALUE1}</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>2</priority>
+                            <description/>
+                            <type>0</type>
+                            <manual_close>1</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].min(#5)}&gt;={$HIGH}</expression>
+                            <recovery_mode>1</recovery_mode>
+                            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:hrProcessorLoad[{#SNMPINDEX}].last()}&lt;{$HIGH}</recovery_expression>
+                            <name>CPU{#SNMPINDEX} load is {ITEM.LASTVALUE1}</name>
                             <correlation_mode>0</correlation_mode>
                             <correlation_tag/>
                             <url/>
@@ -1247,7 +1505,7 @@
                             <priority>4</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>0</manual_close>
+                            <manual_close>1</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
@@ -1261,19 +1519,53 @@
             <macros>
                 <macro>
                     <macro>{$AVG}</macro>
-                    <value>90</value>
-                </macro>
-                <macro>
-                    <macro>{$HIGH}</macro>
                     <value>95</value>
                 </macro>
                 <macro>
+                    <macro>{$HIGH}</macro>
+                    <value>98</value>
+                </macro>
+                <macro>
                     <macro>{$WARN}</macro>
-                    <value>85</value>
+                    <value>90</value>
                 </macro>
             </macros>
             <templates/>
             <screens/>
         </template>
     </templates>
+    <triggers>
+        <trigger>
+            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:SystemUsageMem.min(#3)}&gt;=80 and {QNAP_NAS_SNMPv3_authPriv_DES:SystemUsageMem.min(#3)}&lt;90</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:SystemUsageMem.last()}&lt;80</recovery_expression>
+            <name>{HOST.NAME}: Memory usage is {ITEM.LASTVALUE1}</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{QNAP_NAS_SNMPv3_authPriv_DES:SystemUsageMem.min(#3)}&gt;=90</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{QNAP_NAS_SNMPv3_authPriv_DES:SystemUsageMem.last()}&lt;90</recovery_expression>
+            <name>{HOST.NAME}: Memory usage is {ITEM.LASTVALUE1}</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+    </triggers>
 </zabbix_export>
